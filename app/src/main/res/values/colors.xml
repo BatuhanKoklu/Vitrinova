@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d6462c</color>
+    <color name="colorPrimaryDark">#d6462c</color> <!--Ekranın üstündeki barın rengi-->
+    <color name="colorAccent">#d6462c</color> <!--Edittexlerdeki yanıp sönen cursor ,-->
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorSecondaryWhite">#f5f5f5</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorSecondaryBlack">#676767</color>
+    <color name="colorThirdBlack">#989898</color>
+
+
+
+</resources>

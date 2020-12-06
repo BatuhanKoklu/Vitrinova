@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="editorShop"
+            type="com.batuhankoklu.vitrinova.model.EditorShops" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cnsEditorShopsParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@android:color/transparent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="295dp"
+            android:layout_height="240dp"
+            android:layout_margin="4dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="210dp"
+                android:background="@drawable/etxt_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtShowcaseDefinition">
+
+                    <ImageView
+                        android:id="@+id/imgProduct1"
+                        android:layout_width="55dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/imageview_radius"
+                        android:imageURL="@{editorShop.popularProducts.get(0).images.get(0).url}"
+                        app:layout_constraintEnd_toStartOf="@+id/imgProduct2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <ImageView
+                        android:id="@+id/imgProduct2"
+                        android:layout_width="55dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/imageview_radius"
+                        android:imageURL="@{editorShop.popularProducts.get(1).images.get(0).url}"
+                        app:layout_constraintEnd_toStartOf="@+id/imgProduct3"
+                        app:layout_constraintStart_toEndOf="@id/imgProduct1"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                    <ImageView
+                        android:id="@+id/imgProduct3"
+                        android:layout_width="55dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="4dp"
+                        android:background="@drawable/imageview_radius"
+                        android:imageURL="@{editorShop.popularProducts.get(2).images.get(0).url}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/imgProduct2"
+                        tools:layout_editor_absoluteY="5dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/txtShowcaseName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:maxLines="1"
+                    android:text="@{editorShop.name}"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtShowcaseDefinition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:maxLines="1"
+                    android:text="@{editorShop.definition}"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorThirdBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/txtShowcaseName"
+                    app:layout_constraintStart_toStartOf="@+id/txtShowcaseName"
+                    app:layout_constraintTop_toBottomOf="@+id/txtShowcaseName" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/etxt_search"
+                    android:text="Vitrine git"
+                    android:textColor="@color/colorThirdBlack"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                    app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"></Button>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgShowcaseShop"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:civ_border_color="@color/colorThirdBlack"
+                app:civ_border_width="1dp"
+                android:imageURL="@{editorShop.logo.url}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
